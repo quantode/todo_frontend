@@ -1,0 +1,58 @@
+
+<div class="alert alert-success" *ngIf="message">
+
+  delete
+  <h2>{{message}}</h2>
+</div>
+
+
+
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Description</th>
+    <th scope="col">Target Date</th>
+    <th scope="col">Is Completed</th>
+    <th scope="col">Delete</th>
+    <th scope="col">Update</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let todo of todos">
+
+    <td>{{todo.description}}</td>
+
+    <td>{{todo.targetDate | date}}</td>
+    <td>{{todo.done}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteTodo(todo.id)"> delete Todo</button>
+    </td>
+    <td>
+      <button class="btn btn-outline-light btn-primary" (click)="updateTodo(todo.id)"> update Todo</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+  <div class="row">
+    <button class="btn btn-outline-light btn-success" (click)="addTodo()"> add Todo</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
